@@ -20,3 +20,23 @@ for d in data:
 print('一共有', len(new), '筆留言長度小於100')
 print(new[0])
 print(len(new[0]))
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+# 'a' in 'abc' -> True
+# '1' in 'abc' -> False
+print('一共有', len(good), '筆留言提到good')
+print(good[0])
+
+# list comprehension (清單快寫法)
+good = [d for d in data if 'good' in d]
+print(good)
+
+bad = ['bad' in d for d in data]
+print(bad) # 留言中有提到bad會印出True，沒提到bad則會印出False
+
+bad = []
+for d in data:
+	bad.append('bad' in d)
